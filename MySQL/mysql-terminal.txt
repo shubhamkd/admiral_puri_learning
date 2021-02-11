@@ -1,0 +1,94 @@
+Last login: Tue Feb  9 02:20:10 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+BBMDVSHUBHAMKUM:~ shubham.kumar$ mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+BBMDVSHUBHAMKUM:~ shubham.kumar$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 8.0.23 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE StudentsDB;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE StudentsDB;
+Database changed
+mysql> CREATE TABLE stDtl(rollNo INT(30) AUTO_INCREMENT PRIMARY KEY,mysql> CREATE TABLE stDtl(rollNo INT(30) AUTO_INCREMENT PRIMARY KEY,f);                  ;
+[1]+  Stopped                 mysql -u root -p
+BBMDVSHUBHAMKUM:~ shubham.kumar$ mysql
+ERROR 1045 (28000): Access denied for user 'shubham.kumar'@'localhost' (using password: NO)
+BBMDVSHUBHAMKUM:~ shubham.kumar$ mysql --user=root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 19
+Server version: 8.0.23 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show Database
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Database' at line 1
+mysql> USE StudentsDB;
+Database changed
+mysql> CREATE TABLE stDtl(rollNo INT(11) AUTO_INCREMENT PRIMARY KEY,firstname VARCHAR(30) NOT NULL,lastname VARCHAR(30) NOT NULL,email VARCHAR(50) NOT NULL, 
+    -> mobile VARHCAR(100),
+    -> enrollDate TIMESTAMP);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VARHCAR(100),
+enrollDate TIMESTAMP)' at line 2
+mysql> CREATE TABLE stDtl(rollNo INT(11) AUTO_INCREMENT PRIMARY KEY,firstname VARCHAR(30) NOT NULL,lastname VARCHAR(30) NOT NULL,email VARCHAR(50) NOT NULL, mobile VARHCAR(100), enrollDate TIMESTAMP);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VARHCAR(100), enrollDate TIMESTAMP)' at line 1
+mysql> CREATE TABLE stDtl(rollNo INT(11) AUTO_INCREMENT PRIMARY KEY,firstname VARCHAR(30) NOT NULL,lastname VARCHAR(30) NOT NULL,email VARCHAR(50) NOT NULL, mobile VARHCAR(100), enrollDate DATETIME);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VARHCAR(100), enrollDate DATETIME)' at line 1
+mysql> CREATE TABLE stDtl (rollNo INT(11) AUTO_INCREMENT PRIMARY KEY,firstname VARCHAR(30) NOT NULL,lastname VARCHAR(30) NOT NULL,email VARCHAR(50) NOT NULL, mobile VARHCAR(100), enrollDate TIMESTAMP);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VARHCAR(100), enrollDate TIMESTAMP)' at line 1
+mysql> CREATE TABLE stDtl (rollNo INT(11) AUTO_INCREMENT PRIMARY KEY,firstname VARCHAR(30) NOT NULL,lastname VARCHAR(30) NOT NULL,email VARCHAR(50) NOT NULL, mobile VARCHAR(100), enrollDate TIMESTAMP);
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> INSERT INTO stDtl (firstname,lastname,email,enrollDate,mobile) VALUES ('shubham','kumar','skd@gmail.com',NOW(),'1234567
+89');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM stDtl;
++--------+-----------+----------+---------------+-----------+---------------------+
+| rollNo | firstname | lastname | email         | mobile    | enrollDate          |
++--------+-----------+----------+---------------+-----------+---------------------+
+|      1 | shubham   | kumar    | skd@gmail.com | 123456789 | 2021-02-09 03:51:13 |
++--------+-----------+----------+---------------+-----------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO stDtl (firstname,lastname,email,enrollDate,mobile) VALUES ('sanjeev','kumar','skdmd@gmail.com',NOW(),'123456799');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO stDtl (firstname,lastname,email,enrollDate,mobile) VALUES ('sanjay','shukla','skdmdgd@gmail.com',NOW(),'123459799');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM stDtl
+    -> ;
++--------+-----------+----------+-------------------+-----------+---------------------+
+| rollNo | firstname | lastname | email             | mobile    | enrollDate          |
++--------+-----------+----------+-------------------+-----------+---------------------+
+|      1 | shubham   | kumar    | skd@gmail.com     | 123456789 | 2021-02-09 03:51:13 |
+|      2 | sanjeev   | kumar    | skdmd@gmail.com   | 123456799 | 2021-02-09 03:57:40 |
+|      3 | sanjay    | shukla   | skdmdgd@gmail.com | 123459799 | 2021-02-09 03:58:03 |
++--------+-----------+----------+-------------------+-----------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> 

@@ -1,0 +1,23 @@
+-----> how to open mysql console
+mysql -u root -p
+
+----->to create database
+CREATE DATABASE StudentsDB;
+
+----->to use database
+USE StudentsDB;
+
+----->to create table
+CREATE TABLE stDtl (rollNo INT(11) AUTO_INCREMENT PRIMARY KEY,firstname VARCHAR(30) NOT NULL,lastname VARCHAR(30) NOT NULL,email VARCHAR(50) NOT NULL, mobile VARCHAR(100), enrollDate TIMESTAMP);
+
+---->to insert entry into table(
+    NOTE: order of column may change in query format and table format but must be same for query format and entry,
+    NOW() is used to put current time
+)
+
+INSERT INTO stDtl (firstname,lastname,email,enrollDate,mobile) VALUES ('shubham','kumar','skd@gmail.com',NOW(),'1234567
+89');
+
+-----> to retrieve all entries of table
+SELECT * FROM stDtl;
+

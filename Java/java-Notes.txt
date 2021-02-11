@@ -1,0 +1,345 @@
+--->Installed Java JDK, IntelliJ 
+
+---> String- object representing sequence of characters.
+to create String object, java.lang.String claas is used
+String are always in double quotes. 
+Don't put values in String  object which require arithematic operation.Eg- accountBalance,age but name,address
+can be put in String Object.
+
+---->Primitive DataType
+Byte            8  bit (-128 to 127)
+Short          16 bit (-32  to 32)
+int            32 bit (-2^(31) to 2^(31))
+Long           64 bit   samajh hi gya hoga
+
+float          32 bit single-precision floating point. 
+               eg:     float f1=32.3f;     applying 'f' is compulsory
+
+double         64 bit double-precision floating point. Default choice for decimal values.
+               eg:     double d1=35.4545;
+Boolean        true or false   , don't write 0 or 1
+Char           16 bit unicode character  (\u0000 to \uffff), always in single quotes
+
+--->IF, ELSE IF, ELSE
+if(condition1){
+    if condition1 is true
+} else if(condition2){ 
+    if condition2 is true
+} else{
+    no condition is true
+}
+
+--->Conditional Expressions.SwitchCase,forLoop, whileLoop,DoWhileLoop same as C++.
+    AND,OR,==, != 
+
+SWITCH CASE can be used in place of IF, ELSE IF,ELSE statements     
+    switch(val)
+    {
+        case "A":
+            statements;
+            break;
+        case "B":
+            statements;
+            break;
+        default:
+            statements;
+            break;
+    } 
+
+    if multiple case has same output then 
+    case val1: 
+    case val2: 
+    case val3:
+        statements;
+        break;
+
+    DO_WHILE_LOOP
+    do{
+        statements
+    }while(condition);
+
+    forEach Loop 
+    for(String x:students){
+        you can use x to do something 
+    }
+
+---> ARRAYS are ordered, Integer-Indexed collection of any object.
+denoted by {}
+    creating an array of string objects representing students name.
+        first declaring array reference then allocating memory and values;
+    String[] students;
+    students=new String[]{"shubham","punit","sahaj","shaik"};
+    or 
+    String[] students={"shubham","punit","sahaj","shaik"};
+
+array contain "length" as element ie. arr.length; to get length of array
+
+--->String Interpolation
+if you want to write a single string containing multiple variable one way could be var1+" "+var2+" example "+var3;
+i.e. string concatenation but the other way is like printf function in C.
+i.e      String.format("%s %s example %s",var1,var2,var3); 
+
+public class HelloWorld {
+    public static void main(String args[]){
+        String name="shubham";
+        int age=22;
+        String city,state,country;
+        city="pune";
+        state="maharashtra";
+        country="india";
+
+//        System.out.println("Hello World");
+//        System.out.println("name: "+name+", age: "+age+", city: "+city+", state: "+state+", country: "+country);
+
+        System.out.println(String.format("name: %s, age: %d"+" city: %s, state: %s, country:%s",name,age,city,state,country));
+        Boolean b=true;
+
+    }
+}
+
+---->METHODS
+with return Type- void 
+                - String
+                - double  
+                - int
+                - boolean
+
+Note:
+    A java program can contain multiple classes
+    any of the multiple class can contain "main" method.
+    In the main method also, you can create object of class(that contain "main") too.
+    
+    PseudoCode
+    ----------
+    eg-class A:
+            display:
+            compute:
+            main:
+                create obj of A
+                use obj of A
+
+    here we use 
+        this.            as this is reference
+        whereas in cpp we used 
+            this->           this is a constant pointer there
+        
+--->Types of METHODS
+            -static     (can be called with(obj.methodName(param)) and without object(i.e. class.methodName(param) ) )
+            -non static
+            -getter (Accessor)
+                    method follow naming scheme, prefixing the word "get" to the start of method eg-getName(){}
+                    provide access to obj. non-static variables
+                    used to return the value of a private field
+            -setter (mutator)
+                    method follow naming scheme, prefixing the word "set" to the start of method eg-setName(){}
+                    used to set the value of a non-static variable (mostly private)
+            
+    Note: both getter and setter methods are always made.
+    So intelliJ has provided some utility to create these with ease for that first create all variable in class then
+    RIGHT CLICK->GENERATE->CLICK ON GETER AND SETTER-> CHOSSE VARIABLE FOR WHICH YOU WANT TO CREATE THESE METHODS.
+
+
+---->Constructor 
+if a classX has public constructor then obj of classX can be created insdie classX and from other classes but
+if a classX has private constructor then obj of classX can only be created in classX only and not from 
+other classes. 
+
+---->variables
+Types of variables
+    -local          (created inside method or constructor or block)
+    -instance       (created inside class but outside method or constructor)
+    -class          (static variable)
+    -constant       (value doesn't change, is denoted by UPPERCASE word, use keyword "final")
+
+----->Package
+A java package is a group of similar type of classes, interfaces and sub-packages.
+Packages can be categorised as:
+            built-in packages                        (eg-awt, java, lang, javax, swing, net, io, util, sql, etc)
+            user-defined packages
+Adv. of packages
+    Used to categorize the classes and interfaces for easy maintainance
+    It removes naming collision  (you can have same name classes in different packages but not in same)
+    It provides access protection
+
+---->String methods
+length()                                        returns the length of string
+format(String s)                                returns formatted string
+substring(index)                                returns the substring starting from begin index
+substring(begIndex,endIndex)                    returns the substring strarting and ending at these indexes
+contains(String)                                returns 0 or 1 after matching the sequence of String value.
+equals(String)                                  check the equality of string with object
+equalsIgnoreCase(String)                        check the equality ignoring the classes
+isEmpty()                                       check if string is empty
+ 
+concat(String)
+replace(char a,Char b)                         replaces all occurances of specified char value.
+split(String regEx)                            returns splitted string matching regex.
+toLowerCase()
+toUpperCase()
+trim()                                         removes beg. and ending spaces of string
+valueOf(int value)                             convert given type to String
+
+---->Integer Methods
+"Int" is a primitive datatype which stores actual binary value for integer.
+"Integer" is a java class and variables of it store reference to Integer objects.
+
+intValue()                                    returns integer value of integer class object
+doubleValue()                                 returns double value of integer
+floatValue()                                  returns float value of integer
+Integer.parseInt(String)                      returns integer value of string, if applicable
+Integer.compare(x,y)                          returns 0 if x=y, 1 if x>y, -1 if x<y
+equals(String)                                check the equality of string with object
+
+--->Regular Expressions
+It is a special text string for describing a search pattern.
+Regex pattern are described insdie the "\".
+
+Regex Char                                   Meaning
+^                                            beg. of string  
+$                                            end of string 
+.                                            any character 
+*                                            match 0 or more times
++                                            match 1 or more times 
+?                                            match 0 or 1 time
+|                                            alternative 
+()                                           grouping
+[]                                           match any string inside the square bracket
+{}                                           repetition modifier
+\                                            Escape (to skip double quotes in regex)
+\w                                           any word char 
+\d                                           any digit
+\s                                           space 
+
+matcher class- it is used to perform match operation on a char sequence.
+
+--->Inheritance
+    In derived class,you can create variables with same data type and names as parent class(but it's not needed as you are getting them by inheritance too)
+
+    HOW TO COPY CLASS IN INTELLIJ???
+    on left side bar,go to class,right click, click copy, go to package,right click on package and click paste, popup will come asking for className, write and Ok.  
+
+----->Abstract Class vs interfaces
+Abstract Class can contain both abstract and non-abstract methods but Interface contain abstract methods only.
+
+-----> collection
+It's a group of individual objects represented as a single unit.
+Java provides Collection Framework which defines several classes and interfaces to represent a group of objects as a single unit. 
+Eg-List,Set,Map
+Collection Interface(java.util.Collection) and Map interface (java.util.Map) are 2 main root interfaces of Java Collection classes.
+
+
+--->OverRiding
+ParentClass obj=new ChildClass();
+//calling overRiden method will call overRiden method of child class even without using "virtual" keyword. 
+
+---->Abstraction
+if a class contain "abstract" keyword then it may or may not contain abstract method but if a class contain even a single abstract method then className must
+include "abstract" keyword. 
+
+--->List & ArrayList
+ArrayList can be of 
+generic type            (created for a single data type)
+non-generic type        (elements of various data types are present)
+
+ArrayList implement List interfaces
+
+--->LinkedList
+It imlplements deque interface.
+List obj=new LinkedList();
+LinkedList<String> obj=new LinkedList<String>();
+LinkedList obj=new LinkedList(); 
+
+----vector
+vector obj =new vector();
+or 
+vector obj=new vector(SIZE); to create vector of particular size initially.
+                        element of any data type can be added into it.
+
+---->Access Modifiers
+private     - accessible to same class only
+protected   - not-acccessible to other package non-subclass
+public      - accessible everywhere
+default     - not accessible to other package
+
+----> FILE IO 
+IO is a class in java used to access the file(read,write,overwrite).
+All I/O methods are derived from class java.io
+File input/output in java are performed using stream.
+
+We have 2 kinds of Stream.
+InputStream        - used to read data from a source.
+OutputStream       - used to write data to destination
+
+Various Streams used are
+Byte Streams             -used to perform input/output of 8 bytes  (FileReader, FileWriter class)
+                                FileReader fr=new FileReader(path_of_fileI);   
+                                FileWriter fw =new FileWriter(path_of_fileO);       
+                                while((x=fr.read())!=-1)  to read char
+                                {
+                                    fw.write((char)x)      //to write char
+                                }
+                                fr.close(); 
+                                fw.close();
+
+Character Streams        -used to perform input/output of 16 bytes (FileInputStream, FileOutputStream class)
+Standard Streams         -used to take input from keyboard,output to computer screen (System.in, System.out, System.err)
+
+JUnit
+-----
+It's a Java Testing framework,helps to perfrom Unit test for our java code.
+It uses annotation to identify methods that specify a test.
+@Test                                       -identifies a method as a test method
+@Before                                      -method executed before each test
+@After                                      -method executes after each test
+@BeforeClass               (static)         -Executed Once,before start of all tests
+@AfterClass                 (static)        -Executed Once,after all tests have been finished
+@Ignore                                     -Marks that test should be disabled
+@Test(expected=Exception.class)             -Fails if the method does not throw the named exception
+@Test(timeout=100)                          -Fails if the method takes longer than 100 millisecondstel
+    
+     
+We have JUnitTestSuite to run all JunitTest of all classes at once.
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+    JUnitTest.class,                          //provide all classes
+    JUnitTestBeforeAfterTest.class,  
+    JUnitTestBeforeAfterClass.class         (here,methods are static always)
+})
+                                                                                                                                                                                                                                                                                                                                            
+---->Maven 
+*Soft. project management tool.It helps you to actually get your product up and running in the shortest period of time.With maven it's very easy to run your project,Downlaod the dependencies(in project u will require a lot of artifacts(jar files),ie. aap saari dependencies POM mai daal do ge aur wha se aap saari dependencies download kar sakte),
+*plugin is used to compile java project
+*most popular tool in Java
+*It uses the concept of POM(Project Object Model). which can manage the project's build,reporting and documentation from
+a central piece of information.
+*It's goal is to allow developer to comprehend the complete state of a development effort in the shortest period of time.
+
+*It allows- 
+making the build process easy 
+providing a uniform build System 
+providing quality project information 
+providing guidelines for best practices development
+allowing transparent migration to new features
+
+
+---->How to open .bash_profile to edit
+# vi  ~/.bash_profile
+to save 
+# escape :wq  
+to refresh   
+# source ~/.bash_profile
+
+to get value of envirnoment variable
+# echo $Var_name
+
+to check maven Installed
+# mvn -version
+
+
+
+---->
+GroupId: it's your project identifier
+
+
+
