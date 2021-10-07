@@ -1,0 +1,7 @@
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+source ~/.rvm/scripts/rvm
+
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home"
+
