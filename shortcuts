@@ -1,0 +1,33 @@
+          CHROME
+        -----------
+switch b/n tabs 
+    # control + option + arrowKey
+
+to close current tab 
+    # control + w 
+
+to open tab 
+    # control + t 
+
+right click 
+    # command + mouse click
+
+
+
+          EDITOR 
+          ------
+multiline comment 
+    # control + / 
+
+
+
+ 
+# git restore --staged fileName 
+            to unstage the file from staging area 
+
+    
+# git reset --hard   commidID
+            to delete commit from remote branch and push 
+# git push --force  origin branchName 
+            to push commit to branch, forcefully
+            

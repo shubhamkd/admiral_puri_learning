@@ -1,0 +1,11 @@
+# command + shift + period( . )
+    to hide/unhide dir/files in current directory
+
+# rvm use version_number
+    to use particular version of ruby 
+
+# rvm --default use version_number 
+    to set particular version_number as default version of ruby 
+
+# rvm docs generate-ri 
+    to generate doc for ruby

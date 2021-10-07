@@ -1,0 +1,31 @@
+Tips & Tricks
+
+Required Ruby version h, Lekin facing issue while “bundle install”
+Then  do,
+	#  gem install bundler 
+	#  bundle install
+
+
+To generate code coverage report
+    Add gem,    simplecov
+
+    Add this to spec_helper.rb 
+	# require ‘simplecov’
+	# SimpleCov.start ‘rails’
+
+
+	# rake spec
+
+
+
+rails generate migration users
+rails generate migration documents
+rails active_storage:install
+rake db:migrate
+
+
+ cat ~/.zsh_history
+
+
+# rails g factory_bot:model user
+                To create user factory model
